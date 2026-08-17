@@ -1,0 +1,40 @@
+@keyframes cloud-move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* @keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -100%) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+} */
+@keyframes slideDown {
+  0% {
+    opacity: 0%;
+    transform: translateY(-100%);
+  }
+
+  100% {
+    opacity: 100%;
+
+  }
+}
