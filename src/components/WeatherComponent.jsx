@@ -28,14 +28,14 @@ export default function WeatherComponent() {
   const isRTL = siteLang === "ar";
 
   const [dateAndTime, setDateAndTime] = useState(
-    moment().format(isRTL ? "LL" : "MMMM Do YYYY, h:mm a"),
+    moment().format(isRTL ? "LL" : "MMMM Do YYYY"),
   );
 
   useEffect(() => {
     const timeLang = () => {
       const savedTimeLang = localStorage.getItem("i18nextLng");
       moment.locale(savedTimeLang);
-      setDateAndTime(moment().format(isRTL ? "LL" : "MMMM Do YYYY, h:mm a"));
+      setDateAndTime(moment().format(isRTL ? "LL" : "MMMM Do YYYY"));
     };
     timeLang();
   }, [isRTL]);
