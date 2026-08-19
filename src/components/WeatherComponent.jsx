@@ -28,21 +28,22 @@ export default function WeatherComponent() {
   const isRTL = siteLang === "ar";
 
   const [dateAndTime, setDateAndTime] = useState(
-    moment().format(isRTL ? "LLL" : "MMMM Do YYYY, h:mm a"),
+    moment().format(isRTL ? "LL" : "MMMM Do YYYY, h:mm a"),
   );
 
   useEffect(() => {
     const timeLang = () => {
       const savedTimeLang = localStorage.getItem("i18nextLng");
       moment.locale(savedTimeLang);
-      setDateAndTime(moment().format(isRTL ? "LLL" : "MMMM Do YYYY, h:mm a"));
+      setDateAndTime(moment().format(isRTL ? "LL" : "MMMM Do YYYY, h:mm a"));
     };
     timeLang();
   }, [isRTL]);
 
   function toggleLang() {
-    const newLang = siteLang === "ar" ? "en" : "ar";
+    const newLang = isRTL ? "en" : "ar";
     setLang(newLang);
+    document.title = isRTL ? "Weather App" : "برنامج الطقس";
     i18n.changeLanguage(newLang);
   }
 

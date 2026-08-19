@@ -212,6 +212,12 @@ export function useWeather() {
   });
 
   useEffect(() => {
+    siteLang === "ar"
+      ? (document.title = "برنامج الطقس")
+      : (document.title = "Weather App");
+  }, [siteLang]);
+
+  useEffect(() => {
     localStorage.setItem("language", siteLang);
     i18n.changeLanguage(siteLang);
   }, [siteLang, i18n]);
